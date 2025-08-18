@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      maximum-scale="1.0,"
+      user-scalable="no"
+    />
+    <title>상품 상세 | NOVER</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/product-detail.css" />
+    <link rel="icon" type="image/png" href="../image/logo/favicon.png" />
+  </head>
+  <body>
+    <div class="pd-detail-container">
+      <div class="pd-detail-inner-container">
+        <!-- *** header *** -->
+        <div data-include-path="header.html"></div>
+
+        <div class="pd-detail-inner-bg">
+          <div class="pd-detail-top">
+            <!-- 상품 이미지 영역(왼) -->
+            <div class="pd-image-wrap">
+              <!-- 이미지 다수 존재, 클릭 시 이미지디테일 존재 -->
+              <div class="pd-imglist-wrap">
+                <div class="pd-imglist-box">
+                  <!-- 이미지 들어가는 곳 -->
+                </div>
+                <div class="left-img-prev" id="leftImgPrev"></div>
+                <div class="left-img-next" id="leftImgNext"></div>
+              </div>
+              <div class="pd-image-area">
+                <img src="" alt="" />
+              </div>
+            </div>
+
+            <!-- 상품 디테일 상세 영역(오) -->
+            <div class="pd-detail-content">
+              <div class="pddetail-cont-top">
+                <!-- 브랜드명 -->
+                <div class="brand-wrap">
+                  <div class="brand-area">
+                    <div class="brand-box">
+                      <img class="brand-image" src="" alt="" />
+                    </div>
+                    <p class="brand-name">로라로라</p>
+                  </div>
+                  <!-- 브랜드 좋아요 수 -->
+                  <button type="button" class="brand-like-btn">
+                    <div class="like-icon"></div>
+                    <span>12만</span>
+                  </button>
+                </div>
+                <!-- 카테고리 -->
+                <p class="pd-category">
+                  <span class="pd-cate-main">상의</span> >
+                  <span class="pd-cate-sub">반소매 티셔츠 (로라로라)</span>
+                </p>
+                <!-- 타이틀 -->
+                <p class="pd-title">
+                  [장원영 pick] MAISON DE ROLA EMBROIDERY T-SHIRT WHITE
+                </p>
+                <!-- 별점 / 후기 -->
+                <div class="star-review">
+                  <div class="star">
+                    <img src="../image/star.png" alt="별점" />
+                    <p class="star-txt">4.8</p>
+                  </div>
+                  <div class="review notWork">후기 3,928개</div>
+                </div>
+                <!--  이미지(상품 하위 카테고리) -->
+                <div class="pds-image-wrap">
+                  <div class="pds-image-box notWork">
+                    <img src="../image/product/product1-1.webp" alt="" />
+                  </div>
+                </div>
+                <!-- 가격 -->
+                <div class="pd-price-wrap">
+                  <p class="pd-price">43,000원</p>
+                  <p class="pd-price-sale">
+                    <span class="sale-per">20%</span>
+                    <span class="price-res">34,400원</span>
+                  </p>
+                </div>
+              </div>
+              <!-- 옵션 선택 -->
+              <div class="pddetail-cont-btm">
+                <!-- 기본 선택 값 - + 가격 -->
+                <div class="select-pd-box">
+                  <!-- TODO select -->
+                  <!-- <div class="select-pdbox-top">
+                    <div class="select-pdname-area">
+                      <div class="pdcolor-box"></div>
+                      <span class="pd-select-name">멜란지그레이 · S </span>
+                    </div>
+                    <button type="button" class="del-pd"></button>
+                  </div> -->
+                  <div class="select-pdbox-btm">
+                    <div class="select-count-box">
+                      <button
+                        type="button"
+                        class="minus-btn"
+                        id="minusBtn"
+                        disabled
+                      >
+                        -
+                      </button>
+                      <p class="total-count" id="totalCount">1</p>
+                      <button type="button" class="plus-btn" id="plusBtn">
+                        +
+                      </button>
+                    </div>
+                    <span class="select-total-price" id="selectTotalPrice"
+                      >34,400원
+                    </span>
+                  </div>
+                </div>
+                <!-- 총 n개 총가격 -->
+                <p class="total-select-txt">
+                  <span id="totalCountTxt">총 1개</span>
+                  <span id="totalSelectTxt">34,400원</span>
+                </p>
+
+                <!-- 상품 좋아요 수 / 장바구니 버튼 / 구매하기 버튼 -->
+                <div class="pd-btns">
+                  <div class="like-btn">
+                    <div class="like-bigicon"></div>
+                    <span>3.4천</span>
+                  </div>
+                  <button type="button" class="cart-btn notWork">
+                    장바구니
+                  </button>
+                  <button type="button" class="buy-btn notWork">
+                    구매하기
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pd-detail-btm">
+            <!-- 세그먼트 탭 -->
+            <div class="seg">
+              <div class="seg-item active">상품 정보</div>
+            </div>
+            <!-- 상세보기 -->
+            <div class="detailinfo-img-wrap">
+              <div class="detailinfo-img-area" id="detailInfoImg"></div>
+            </div>
+            <!-- 리뷰 -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../js/script.js"></script>
+    <script src="../js/product-detail.js"></script>
+  </body>
+</html>
+
+<div class="image-modal" id="imageModal">
+  <div class="close-modal">&times;</div>
+
+  <div class="modal-content" id="modalContent">
+    <img class="modaldetail-img" id="modalImage" alt="상품 이미지 디테일" />
+  </div>
+</div>

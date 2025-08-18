@@ -1,0 +1,98 @@
+<!-- 상단 메뉴, 로그인/회원가입 -->
+<div class="top-header">
+  <div class="menu-flex">
+    <!-- 모양으로 변형 -->
+    <!-- <button type="button" class="menu-detail-btn"></button> -->
+    <div class="menu-detail-btn"></div>
+    <ul class="out-menu outbar">
+      <li>
+        <a href="/">NOVER</a>
+      </li>
+      <li>
+        <a href="#">WOMAN</a>
+      </li>
+      <li>
+        <a href="#">MAN</a>
+      </li>
+      <li>
+        <a href="#">BEAUTY</a>
+      </li>
+      <li>
+        <a href="#">KIDS</a>
+      </li>
+      <li>
+        <a href="#">SHOES</a>
+      </li>
+    </ul>
+    <p class="snap-menu">YEONHEE</p>
+  </div>
+
+  <div class="menu-flex right-menu">
+    <ul class="out-menu">
+      <li>
+        <a href="/pages/search-detail.html">검색</a>
+      </li>
+      <li>
+        <a href="/pages/inquiry.html">문의</a>
+      </li>
+      <li>
+        <a href="/pages/mypage.html">마이페이지</a>
+      </li>
+    </ul>
+    <button type="button" class="h-login-btn" id="loginBtn">
+      <a href="/pages/account/login.html">로그인 / 회원가입</a>
+    </button>
+    <button
+      type="button"
+      class="h-login-btn"
+      style="display: none"
+      id="logoutBtn"
+    >
+      로그아웃
+    </button>
+  </div>
+</div>
+
+<!-- 로고, 알림 -->
+<div class="middle-header">
+  <h1 class="logo">
+    <a href="/">
+      <img src="/image/logo/logo-white.png" alt="NOVER 로고" />
+    </a>
+  </h1>
+  <button type="button" class="alarm"></button>
+</div>
+
+<!-- 검색바 -->
+<div class="search-header">
+  <div class="searchbar" id="mainSearchbar">
+    <span>NOVER에서 추천하는 상품</span>
+  </div>
+</div>
+
+<!-- 세그먼트(고정) -->
+<div class="segment-header">
+  <ul class="segment-wrap">
+    <li class="segment-item" id="productAll">
+      <a href="/pages/product-list.html">전체 상품</a>
+    </li>
+    <li class="segment-item active" id="home">
+      <a href="/">홈</a>
+    </li>
+    <li class="segment-item" id="recommend">
+      <a href="#">추천</a>
+    </li>
+    <li class="segment-item" id="ranking">
+      <a href="#">랭킹</a>
+    </li>
+    <li class="segment-item" id="sale">
+      <a href="#">세일</a>
+    </li>
+    <li class="segment-item newbadge" id="liveSchedule">
+      <a href="/pages/live-schedule-list.html">라이브 편성표</a>
+    </li>
+    <li class="segment-item" id="contentList">
+      <a href="/pages/content-list.html">콘텐츠</a>
+    </li>
+  </ul>
+</div>
