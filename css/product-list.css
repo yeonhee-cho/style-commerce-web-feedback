@@ -37,6 +37,23 @@ h3 {
   height: 312px;
   overflow: hidden;
 }
+.numtag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 30px;
+  height: 30px;
+  background-color: #666;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #fff;
+  z-index: 10;
+}
+
 .product-list .product-item .pd-image img {
   width: 100%;
   height: 100%;
@@ -81,6 +98,7 @@ h3 {
   line-height: 18px;
   font-weight: 400;
   color: #000;
+  min-height: 36px;
   /* 여러 줄 말줄임 */
   text-overflow: ellipsis;
   overflow: hidden;

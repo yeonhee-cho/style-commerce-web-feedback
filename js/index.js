@@ -68,21 +68,41 @@ $(window).on("resize", function () {
 // 배너 슬라이드 등록
 function addBanner() {
   $.get("../json/banner.json").done(function (data) {
-    $("#bannerList").html(
-      data.map(
-        (i) => `
+    if (data) {
+      $("#bannerList").html(
+        data
+          .map(
+            (i) => `
             <div class="banner-item" >
-              <img src="${i.image_url}" alt="${i.title}" />
-              <div class="banner-txt">
-                <p class="banner-tit">
-                  ${i.title}
-                </p>
-                <p class="banner-cont">${i.subtitle}</p>
-              </div>
+              <a href="/pages/banner-detail.html" data-banner='${JSON.stringify(
+                i
+              )}'>
+                <img src="${i.image_url}" alt="${i.title}" />
+                <div class="banner-txt">
+                  <p class="banner-tit">
+                    ${i.title}
+                  </p>
+                  <p class="banner-cont">${i.subtitle}</p>
+                </div>
+              </a>
             </div>
             `
-      )
-    );
+          )
+          .join("")
+      );
+      document.querySelectorAll(".banner-item a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const banner = this.dataset.banner;
+          console.log(banner);
+
+          localStorage.setItem("selectedBanner", banner);
+
+          window.location.href = this.getAttribute("href");
+        });
+      });
+    }
   });
 
   // 배너 슬라이드 실행
@@ -271,7 +291,9 @@ function addProducts() {
                       ${i.product_name}
                     </p>
                     <p class="pd-price">
-                      <span class="discount-per">${i.discount_rate}%</span>
+                      <span class="discount-per">${
+                        i.discount_rate === 0 ? "" : i.discount_rate + "%"
+                      }</span>
                       ${i.sale_price.toLocaleString()}원
                     </p>
                   </div>
@@ -311,7 +333,7 @@ function addContents() {
     if (datas) {
       $("#contResult").html(
         datas
-          .map((data) => {
+          .map((data, index) => {
             const content = data.content;
             const products = data.products || [];
             const moreBtn = data.more_button;
@@ -352,7 +374,7 @@ function addContents() {
 
             return `
             <div class="content-item">
-                <div class="cont-item-inner">
+                <a href="/pages/content-detail.html" data-index="${index}"  class="cont-item-inner">
                   <div class="con-image">
                     <img src="${data.content.thumbnail}" alt="${
               data.content.title
@@ -384,13 +406,23 @@ function addContents() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
                 ${productHTML}       
               </div>
             `;
           })
           .join("")
       );
+      document.querySelectorAll(".content-item a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const index = this.dataset.index;
+          localStorage.setItem("allContents", JSON.stringify(datas));
+          localStorage.setItem("selectedIndex", index);
+          window.location.href = this.getAttribute("href");
+        });
+      });
     }
   });
 }
@@ -409,20 +441,39 @@ function addSchedule() {
   $.get("../json/schedule.json").done(function (data) {
     if (data) {
       $("#scheduleResult").html(
-        data.map(
-          (i) => `
+        data
+          .map(
+            (i) => `
              <div class="schedule-item">
-                <div class="schedule-image">
-                  <img src="${i.thumbnail}" alt="${i.title}" />
-                  <p class="schdate-box">${i.d_day}</p>
-                </div>
-                <div class="schedule-text-area">
-                  <p>${i.title}</p>
-                </div>
+                <a href="/pages/live-schedule-detail.html" data-schedule ='${JSON.stringify(
+                  i
+                )}' >
+                  <div class="schedule-image">
+                    <img src="${i.thumbnail}" alt="${i.title}" />
+                    <p class="schdate-box">${i.d_day}</p>
+                  </div>
+                  <div class="schedule-text-area">
+                    <p>${i.title}</p>
+                  </div>
+                </a>
               </div>
             `
-        )
+          )
+          .join("")
       );
+
+      document.querySelectorAll(".schedule-item a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const schedule = this.dataset.schedule;
+          console.log(schedule);
+
+          localStorage.setItem("selectedSchedule", schedule);
+
+          window.location.href = this.getAttribute("href");
+        });
+      });
     }
   });
 }

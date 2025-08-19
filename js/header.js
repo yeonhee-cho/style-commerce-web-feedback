@@ -4,6 +4,8 @@ $(function () {
     loginCheck();
     $("#logoutBtn").click(logoutFn);
     goSearch();
+    filter();
+    filterTop();
   }, 1000);
 });
 
@@ -60,5 +62,34 @@ function goSearch() {
 
   mainSearchbar.addEventListener("click", () => {
     window.location.href = "/pages/search-detail.html";
+  });
+}
+
+// 상품 filter 하단 seg
+function filter() {
+  document.querySelectorAll(".sort").forEach((item) => {
+    if (item) {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const filter = item.dataset.filter; // recommend, ranking, sale
+
+        window.location.href = `/pages/product-list.html?filter=${filter}`;
+      });
+    }
+  });
+}
+
+// 상품 filter 상단 메뉴
+function filterTop() {
+  document.querySelectorAll(".menu-sort").forEach((item) => {
+    if (item) {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const filter = item.dataset.filter; // recommend, ranking, sale
+        console.log(filter);
+
+        window.location.href = `/pages/product-list.html?filter=${filter}`;
+      });
+    }
   });
 }

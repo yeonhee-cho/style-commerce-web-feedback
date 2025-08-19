@@ -8,19 +8,19 @@
       <li>
         <a href="/">NOVER</a>
       </li>
-      <li>
+      <li class="menu-sort" data-filter="woman">
         <a href="#">WOMAN</a>
       </li>
-      <li>
+      <li class="menu-sort" data-filter="man">
         <a href="#">MAN</a>
       </li>
-      <li>
-        <a href="#">BEAUTY</a>
+      <li class="menu-sort" data-filter="bag">
+        <a href="#">BAG</a>
       </li>
-      <li>
-        <a href="#">KIDS</a>
+      <li class="menu-sort" data-filter="acc">
+        <a href="#">ACC</a>
       </li>
-      <li>
+      <li class="menu-sort" data-filter="shoes">
         <a href="#">SHOES</a>
       </li>
     </ul>
@@ -60,7 +60,8 @@
       <img src="/image/logo/logo-white.png" alt="NOVER 로고" />
     </a>
   </h1>
-  <button type="button" class="alarm"></button>
+  <!-- 생략 -->
+  <!-- <button type="button" class="alarm"></button> -->
 </div>
 
 <!-- 검색바 -->
@@ -79,13 +80,13 @@
     <li class="segment-item active" id="home">
       <a href="/">홈</a>
     </li>
-    <li class="segment-item" id="recommend">
+    <li class="segment-item sort" id="recommend" data-filter="recommend">
       <a href="#">추천</a>
     </li>
-    <li class="segment-item" id="ranking">
+    <li class="segment-item sort" id="ranking" data-filter="ranking">
       <a href="#">랭킹</a>
     </li>
-    <li class="segment-item" id="sale">
+    <li class="segment-item sort" id="sale" data-filter="sale">
       <a href="#">세일</a>
     </li>
     <li class="segment-item newbadge" id="liveSchedule">

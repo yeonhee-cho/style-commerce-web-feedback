@@ -16,9 +16,11 @@ window.addEventListener("load", async () => {
 
           // 페이지 확인하기
           const currentPath = window.location.pathname;
+          const filter = new URLSearchParams(window.location.search).get(
+            "filter"
+          );
 
           // 세그먼트 같은 메뉴 영역 변경해주기
-          // TODO 임의값 있음 수정 혹은 삭제 필요
           const segmentItems = tempDiv.querySelectorAll(
             ".segment-header .segment-wrap .segment-item"
           );
@@ -32,25 +34,18 @@ window.addEventListener("load", async () => {
           const liveScheduleSeg = tempDiv.querySelector("#liveSchedule");
           const contentSeg = tempDiv.querySelector("#contentList");
           if (currentPath === "/" || currentPath.includes("index.html")) {
-            console.log("home");
             if (homeSeg) homeSeg.classList.add("active");
-          } else if (currentPath.includes("/product-list.html")) {
-            console.log("product");
-            if (productSeg) productSeg.classList.add("active");
-          } else if (currentPath.includes("/recommend-list.html")) {
-            console.log("recommend");
+          } else if (filter === "recommend") {
             if (recommendSeg) recommendSeg.classList.add("active");
-          } else if (currentPath.includes("/ranking-list.html")) {
-            console.log("ranking");
+          } else if (filter === "ranking") {
             if (rankingSeg) rankingSeg.classList.add("active");
-          } else if (currentPath.includes("/sale-list.html")) {
-            console.log("sale");
+          } else if (filter === "sale") {
             if (saleSeg) saleSeg.classList.add("active");
+          } else if (currentPath.includes("/product-list.html")) {
+            if (productSeg) productSeg.classList.add("active");
           } else if (currentPath.includes("/live-schedule-list.html")) {
-            console.log("schedule");
             if (liveScheduleSeg) liveScheduleSeg.classList.add("active");
           } else if (currentPath.includes("/content-list.html")) {
-            console.log("content");
             if (contentSeg) contentSeg.classList.add("active");
           }
 
@@ -60,7 +55,15 @@ window.addEventListener("load", async () => {
             currentPath.includes("signup.html") ||
             currentPath.includes("product-detail.html") ||
             currentPath.includes("/search-detail.html") ||
-            currentPath.includes("/mypage.html")
+            currentPath.includes("/mypage.html") ||
+            currentPath.includes("/notice.html") ||
+            currentPath.includes("/faq.html") ||
+            currentPath.includes("/inquiry.html") ||
+            currentPath.includes("/location-info.html") ||
+            currentPath.includes("/company-info.html") ||
+            currentPath.includes("/banner-detail.html") ||
+            currentPath.includes("/live-schedule-detail.html") ||
+            currentPath.includes("/content-detail.html")
           ) {
             const search = tempDiv.querySelector(".search-header");
             const segment = tempDiv.querySelector(".segment-header");
