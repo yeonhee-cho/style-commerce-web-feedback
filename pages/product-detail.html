@@ -8,11 +8,11 @@
       maximum-scale="1.0,"
       user-scalable="no"
     />
-    <meta property="og:image" content="./image/share-img.png" />
+    <meta property="og:image" content="../image/share-img.png" />
     <meta property="og:title" content="NOVER" />
     <meta
       property="og:description"
-      content="무신사 클론을 기반으로 제작한 연습용 사이트 ‘NOVER’입니다."
+      content="무신사 클론을 기반으로 제작한 연습용 사이트 'NOVER'입니다."
     />
     <title>상품 상세 | NOVER</title>
     <script
@@ -29,18 +29,13 @@
   <body>
     <div class="pd-detail-container">
       <div class="pd-detail-inner-container">
-        <!-- *** header *** -->
         <div data-include-path="header.html"></div>
 
         <div class="pd-detail-inner-bg">
           <div class="pd-detail-top">
-            <!-- 상품 이미지 영역(왼) -->
             <div class="pd-image-wrap">
-              <!-- 이미지 다수 존재, 클릭 시 이미지디테일 존재 -->
               <div class="pd-imglist-wrap">
-                <div class="pd-imglist-box">
-                  <!-- 이미지 들어가는 곳 -->
-                </div>
+                <div class="pd-imglist-box"></div>
                 <div class="left-img-prev" id="leftImgPrev"></div>
                 <div class="left-img-next" id="leftImgNext"></div>
               </div>
@@ -49,10 +44,8 @@
               </div>
             </div>
 
-            <!-- 상품 디테일 상세 영역(오) -->
             <div class="pd-detail-content">
               <div class="pddetail-cont-top">
-                <!-- 브랜드명 -->
                 <div class="brand-wrap">
                   <div class="brand-area">
                     <div class="brand-box">
@@ -60,22 +53,18 @@
                     </div>
                     <p class="brand-name">로라로라</p>
                   </div>
-                  <!-- 브랜드 좋아요 수 -->
                   <button type="button" class="brand-like-btn">
                     <div class="like-icon"></div>
                     <span>12만</span>
                   </button>
                 </div>
-                <!-- 카테고리 -->
                 <p class="pd-category">
                   <span class="pd-cate-main">상의</span> >
                   <span class="pd-cate-sub">반소매 티셔츠 (로라로라)</span>
                 </p>
-                <!-- 타이틀 -->
                 <p class="pd-title">
                   [장원영 pick] MAISON DE ROLA EMBROIDERY T-SHIRT WHITE
                 </p>
-                <!-- 별점 / 후기 -->
                 <div class="star-review">
                   <div class="star">
                     <img src="../image/star.png" alt="별점" />
@@ -83,7 +72,6 @@
                   </div>
                   <div class="review notWork">후기 3,928개</div>
                 </div>
-                <!--  이미지(상품 하위 카테고리) -->
                 <div class="pds-image-wrap">
                   <div class="pds-image-box notWork">
                     <img src="" alt="" />
@@ -98,9 +86,7 @@
                   </p>
                 </div>
               </div>
-              <!-- 옵션 선택 -->
               <div class="pddetail-cont-btm">
-                <!-- 기본 선택 값 - + 가격 -->
                 <div class="select-pd-box">
                   <!-- TODO select -->
                   <!-- <div class="select-pdbox-top">
@@ -130,13 +116,10 @@
                     </span>
                   </div>
                 </div>
-                <!-- 총 n개 총가격 -->
                 <p class="total-select-txt">
                   <span id="totalCountTxt">총 1개</span>
                   <span id="totalSelectTxt">34,400원</span>
                 </p>
-
-                <!-- 상품 좋아요 수 / 장바구니 버튼 / 구매하기 버튼 -->
                 <div class="pd-btns">
                   <div class="like-btn">
                     <div class="like-bigicon"></div>
@@ -153,21 +136,19 @@
             </div>
           </div>
           <div class="pd-detail-btm">
-            <!-- 세그먼트 탭 -->
             <div class="seg">
               <div class="seg-item active">상품 정보</div>
             </div>
-            <!-- 상세보기 -->
             <div class="detailinfo-img-wrap">
               <div class="detailinfo-img-area" id="detailInfoImg"></div>
             </div>
-            <!-- 리뷰 -->
           </div>
         </div>
       </div>
     </div>
-    <script src="../../js/script.js"></script>
+    <script src="../js/script.js"></script>
     <script src="../js/product-detail.js"></script>
+    <script src="../js/header.js"></script>
   </body>
 </html>
 

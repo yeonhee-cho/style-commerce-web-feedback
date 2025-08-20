@@ -8,7 +8,7 @@
       maximum-scale="1.0,"
       user-scalable="no"
     />
-    <meta property="og:image" content="./image/share-img.png" />
+    <meta property="og:image" content="image/share-img.png" />
     <meta property="og:title" content="NOVER" />
     <meta
       property="og:description"
@@ -20,25 +20,21 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="icon" type="image/png" href="./image/logo/favicon.png" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="icon" type="image/png" href="image/logo/favicon.png" />
   </head>
   <body>
     <div class="main-container">
       <div class="main-inner-container">
-        <!-- *** header *** -->
-        <div data-include-path="./pages/header.html"></div>
+        <div data-include-path="pages/header.html"></div>
 
         <div class="main-inner-bg">
-          <!-- ** banner ** -->
           <div class="main-banner-wrap">
-            <!-- 배너 영역 -->
             <div class="banner-list" id="bannerList"></div>
-            <!-- carousel -->
             <button
               type="button"
               class="carousel-prev"
@@ -51,14 +47,10 @@
             ></button>
           </div>
 
-          <!-- 카테고리(모양) -->
           <div class="category-wrap">
-            <ul class="category-list" id="cateResult">
-              <!-- 카테고리 내용 들어 갈 부분 : js에서 확인 가능 -->
-            </ul>
+            <ul class="category-list" id="cateResult"></ul>
           </div>
 
-          <!-- ** products ** -->
           <div class="products-wrap">
             <div class="list-top-tit">
               <p class="list-title">
@@ -66,22 +58,18 @@
                 인기상품을 소개합니다
               </p>
               <button type="button" class="list-more-btn">
-                <a href="/pages/product-list.html">더보기</a>
+                <a href="pages/product-list.html">더보기</a>
               </button>
             </div>
             <div class="carouselarea-wrap" id="pdListWrap">
               <div class="product-scroll" id="pdList">
-                <div class="product-list" id="pdResult">
-                  <!-- 상품 내용 들어올 영역 -->
-                </div>
+                <div class="product-list" id="pdResult"></div>
               </div>
-              <!-- carousel -->
               <button type="button" class="carousel-prev" id="pdPrev"></button>
               <button type="button" class="carousel-next" id="pdNext"></button>
             </div>
           </div>
 
-          <!-- ** contents ** -->
           <div class="content-wrap">
             <div class="list-top-tit">
               <p class="list-title">최신 콘텐츠</p>
@@ -91,11 +79,8 @@
             </div>
             <div class="carouselarea-wrap" id="contListWrap">
               <div class="content-scroll" id="contList">
-                <div class="content-list" id="contResult">
-                  <!-- 콘텐츠 내용 들어올 영역 -->
-                </div>
+                <div class="content-list" id="contResult"></div>
               </div>
-              <!-- carousel -->
               <button
                 type="button"
                 class="carousel-prev"
@@ -109,7 +94,6 @@
             </div>
           </div>
 
-          <!-- ** schedule ** -->
           <div class="schedule-wrap">
             <div class="list-top-tit">
               <p class="list-title">NOVER 라이브 편성표</p>
@@ -119,11 +103,8 @@
             </div>
             <div class="carouselarea-wrap" id="scheduleListWrap">
               <div class="schedule-scroll" id="scheduleList">
-                <div class="schedule-list" id="scheduleResult">
-                  <!-- 편성표 내용 들어올 영역 -->
-                </div>
+                <div class="schedule-list" id="scheduleResult"></div>
               </div>
-              <!-- carousel -->
               <button
                 type="button"
                 class="carousel-prev"
@@ -137,17 +118,16 @@
             </div>
           </div>
         </div>
-        <!-- ** footer ** -->
-        <div data-include-path="./pages/footer.html"></div>
+        <div data-include-path="pages/footer.html"></div>
       </div>
 
       <button type="button" class="fab-btn" id="scrollTopBtn">
-        <img src="./image/top-scroll.png" alt="상단으로 이동" />
+        <img src="image/top-scroll.png" alt="상단으로 이동" />
       </button>
     </div>
-    <script src="./js/script.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/header.js"></script>
-    <script src="./js/footer.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
   </body>
 </html>

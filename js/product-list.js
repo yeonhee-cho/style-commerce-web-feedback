@@ -1,19 +1,13 @@
 $(function () {
-  addProducts();
-
   function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
   }
 
-  const filter = getQueryParam("filter") || "recommend";
+  const filter = getQueryParam("filter");
 
   if (filter) {
     addProductsWithSort(filter);
-    $(function () {
-      const filter = getQueryParam("filter") || "recommend";
-      addProductsWithSort(filter);
-    });
   } else {
     addProducts();
   }
@@ -76,7 +70,7 @@ function menuFilter(filter) {
   $.get("../json/products.json").done(function (data) {
     if (!data) return;
 
-    let sortedData = [...data];
+    let filteredData = [...data];
 
     if (filter === "woman") {
       filteredData = data.filter((item) => item.type === "woman");

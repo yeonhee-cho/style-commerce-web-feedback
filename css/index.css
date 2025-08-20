@@ -4,8 +4,6 @@
 
 .main-inner-container {
   width: 100%;
-  /* min-width: 743px; */
-  min-width: 1000px;
   max-width: 1440px;
   background-color: #1a1b1f;
   margin: 0 auto;
@@ -15,7 +13,6 @@
   background-color: #fafafa;
 }
 
-/* carousel */
 .carouselarea-wrap {
   position: relative;
 }
@@ -29,6 +26,7 @@
   height: 39px;
   background: url(../image/banner-prev.png) no-repeat center/100%;
   cursor: pointer;
+  z-index: 10;
 }
 .carousel-next {
   display: none;
@@ -40,12 +38,12 @@
   height: 39px;
   background: url(../image/banner-next.png) no-repeat center/100%;
   cursor: pointer;
+  z-index: 10;
 }
 
-/* 메인 배너 */
 .main-banner-wrap {
   position: relative;
-  width: calc(100vw - (100vw - 100%));
+  width: 100%;
   overflow: hidden;
 }
 .main-banner-wrap:hover .carousel-prev,
@@ -60,19 +58,17 @@
 }
 .banner-list .banner-item {
   position: relative;
-  min-width: 33.3333%;
-  width: 480px;
-  max-width: 33.3333%;
+  min-width: 100%;
+  width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
-  /* cursor: pointer; */
 }
 .banner-list .banner-item img {
-  width: 480px;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-/* 배너 텍스트 영역 */
+
 .banner-list .banner-item .banner-txt {
   position: absolute;
   bottom: 20px;
@@ -93,9 +89,9 @@
   overflow-x: hidden;
 }
 
-/* 카테고리 영역 */
 .category-wrap {
-  padding: 16px 16px 16px 24px;
+  padding: 16px;
+  box-sizing: border-box;
 }
 .category-wrap .category-list {
   display: flex;
@@ -126,6 +122,7 @@
   width: 26px;
   height: 26px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .category-list .category-item .cate-icon img {
   width: 26px;
@@ -146,6 +143,7 @@
   align-items: flex-end;
   padding: 12px 16px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .list-top-tit .list-title {
   font-size: 18px;
@@ -162,9 +160,9 @@
   padding: 8px 4px;
   margin-left: 40px;
   text-decoration-line: underline;
+  flex-shrink: 0;
 }
 
-/* 상품 영역 */
 .products-wrap {
   width: 100%;
 }
@@ -173,41 +171,31 @@
   width: 100%;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  scroll-behavior: auto; /* 부드러운 스크롤 대신 즉각 반응 */
-
+  scroll-behavior: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 0 16px 24px 16px;
+  box-sizing: border-box;
 }
 .products-wrap .product-scroll::-webkit-scrollbar {
   display: none;
 }
 .products-wrap .product-list {
-  min-width: 2600px;
-  width: 100%;
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(2, auto);
+  display: flex;
+  gap: 8px;
   padding-right: 16px;
 }
 .product-list .product-item {
-  width: 260px;
+  min-width: calc(50% - 4px);
+  width: calc(50% - 4px);
   cursor: pointer;
+  flex-shrink: 0;
 }
-/* 오른쪽 영역 체크 */
-.product-list .product-item:last-child::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -16px;
-  width: 16px;
-  height: 100%;
-  background-color: transparent;
-}
+
 .product-list .product-item .pd-image {
   position: relative;
   width: 100%;
-  height: 312px;
+  aspect-ratio: 1/1;
   overflow: hidden;
 }
 .product-list .product-item .pd-image .pd-like-btn {
@@ -230,6 +218,7 @@
 }
 .product-list .product-item .pd-image img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .product-list .product-item .pd-text-area {
@@ -242,7 +231,6 @@
   line-height: 14px;
   font-weight: 600;
   color: #000;
-  /* 한 줄 말줄임 */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -254,7 +242,6 @@
   font-weight: 400;
   color: #000;
   min-height: 36px;
-  /* 여러 줄 말줄임 */
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -275,7 +262,6 @@
   margin-right: 2px;
 }
 
-/* 최신 콘텐츠 영역 */
 .content-wrap {
   width: 100%;
 }
@@ -284,42 +270,34 @@
   width: 100%;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  scroll-behavior: auto; /* 부드러운 스크롤 대신 즉각 반응 */
-
+  scroll-behavior: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 0 16px 24px 16px;
+  box-sizing: border-box;
 }
-content-wrap .content-scroll::-webkit-scrollbar {
+.content-wrap .content-scroll::-webkit-scrollbar {
   display: none;
 }
 .content-list {
   display: flex;
   align-items: flex-start;
+  gap: 8px;
 }
 .content-list .content-item {
   position: relative;
-  width: 468px;
-  height: 516px;
+  min-width: calc(100% - 8px);
+  width: calc(100% - 8px);
   background-color: #fff;
+  flex-shrink: 0;
 }
-/* 오른쪽 영역 체크 */
-.content-list .content-item:last-child::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -16px;
-  width: 16px;
-  height: 100%;
-  background-color: transparent;
-}
+
 .content-list .content-item .cont-item-inner {
   cursor: pointer;
 }
 .content-list .content-item .con-image {
   aspect-ratio: 3 / 2;
   width: 100%;
-  height: 312px;
   overflow: hidden;
 }
 .content-list .content-item .con-image img {
@@ -328,7 +306,7 @@ content-wrap .content-scroll::-webkit-scrollbar {
   object-fit: cover;
 }
 .content-list .content-item .con-text-area {
-  padding: 12px 12px 8px;
+  padding: 12px;
   background-color: #fff;
 }
 .content-list .content-item .con-text-area .con-cate {
@@ -351,7 +329,6 @@ content-wrap .content-scroll::-webkit-scrollbar {
   font-weight: 400;
   color: #666;
   padding: 4px 0 8px;
-  /* 한 줄 말줄임 */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -362,16 +339,18 @@ content-wrap .content-scroll::-webkit-scrollbar {
   gap: 4px;
   background-color: #fff;
   padding: 8px 12px 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .con-image-list .con-image-item {
   position: relative;
+  min-width: 72px;
   width: 72px;
   height: 86px;
   border-radius: 4px;
-  position: relative;
   cursor: pointer;
   overflow: hidden;
-  display: inline-block;
+  flex-shrink: 0;
 }
 .con-image-list .con-image-item:nth-of-type(4):before {
   content: "";
@@ -452,7 +431,6 @@ content-wrap .content-scroll::-webkit-scrollbar {
   color: #666;
 }
 
-/* 라이브 편성표 */
 .schedule-wrap {
   width: 100%;
 }
@@ -461,11 +439,11 @@ content-wrap .content-scroll::-webkit-scrollbar {
   width: 100%;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  scroll-behavior: auto; /* 부드러운 스크롤 대신 즉각 반응 */
-
+  scroll-behavior: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 0 16px 24px 16px;
+  box-sizing: border-box;
 }
 .schedule-wrap .schedule-scroll::-webkit-scrollbar {
   display: none;
@@ -474,27 +452,20 @@ content-wrap .content-scroll::-webkit-scrollbar {
   width: 100%;
   display: flex;
   position: relative;
+  gap: 8px;
 }
 .schedule-list .schedule-item {
-  min-width: 260px;
-  width: 260px;
+  min-width: calc(50% - 4px);
+  width: calc(50% - 4px);
   position: relative;
   cursor: pointer;
+  flex-shrink: 0;
 }
-/* 오른쪽 영역 체크 */
-.schedule-list .schedule-item:last-child::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -16px;
-  width: 16px;
-  height: 100%;
-  background-color: transparent;
-}
+
 .schedule-list .schedule-item .schedule-image {
   position: relative;
   width: 100%;
-  height: 312px;
+  aspect-ratio: 1/1;
 }
 .schedule-list .schedule-item .schedule-image img {
   width: 100%;
@@ -521,12 +492,11 @@ content-wrap .content-scroll::-webkit-scrollbar {
   background-color: #fff;
 }
 .schedule-list .schedule-item .schedule-text-area p {
-  padding: 8px 8px 12px 8px;
+  padding: 8px;
   font-size: 13px;
   line-height: 18px;
   font-weight: 600;
   color: #000;
-  /* 여러 줄 말줄임 */
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -534,7 +504,6 @@ content-wrap .content-scroll::-webkit-scrollbar {
   -webkit-line-clamp: 2;
 }
 
-/* 오른쪽 하단 fab 버튼 */
 .fab-btn {
   position: fixed;
   right: 16px;
@@ -548,9 +517,151 @@ content-wrap .content-scroll::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  z-index: 1000;
 }
 .fab-btn img {
   width: 28px;
   height: 28px;
   object-fit: cover;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .banner-list .banner-item {
+    min-width: 50%;
+    width: 50%;
+  }
+
+  .product-list .product-item {
+    min-width: calc(33.333% - 6px);
+    width: calc(33.333% - 6px);
+  }
+
+  .content-list .content-item {
+    min-width: calc(70% - 8px);
+    width: calc(70% - 8px);
+  }
+
+  .schedule-list .schedule-item {
+    min-width: calc(33.333% - 6px);
+    width: calc(33.333% - 6px);
+  }
+}
+
+@media (min-width: 1025px) {
+  .banner-list .banner-item {
+    min-width: 33.3333%;
+    width: 33.3333%;
+  }
+
+  .products-wrap .product-list {
+    min-width: 2600px;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    display: grid;
+  }
+
+  .product-list .product-item {
+    width: 260px;
+    min-width: 260px;
+  }
+
+  .content-list .content-item {
+    width: 468px;
+    min-width: 468px;
+  }
+
+  .schedule-list .schedule-item {
+    min-width: 260px;
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-prev,
+  .carousel-next {
+    width: 32px;
+    height: 32px;
+  }
+
+  .carousel-prev {
+    left: 8px;
+  }
+
+  .carousel-next {
+    right: 8px;
+  }
+
+  .banner-list .banner-item .banner-txt {
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .banner-list .banner-item .banner-txt .banner-tit {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .banner-list .banner-item .banner-txt .banner-cont {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+  }
+
+  .category-wrap {
+    padding: 12px;
+  }
+
+  .list-top-tit {
+    padding: 8px 12px;
+  }
+
+  .list-top-tit .list-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .list-top-tit .list-more-btn {
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 20px;
+  }
+
+  .products-wrap .product-scroll,
+  .content-wrap .content-scroll,
+  .schedule-wrap .schedule-scroll {
+    padding: 0 12px 16px 12px;
+  }
+
+  .fab-btn {
+    right: 12px;
+    bottom: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .fab-btn img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-wrap {
+    padding: 8px;
+  }
+
+  .category-wrap .category-list .category-item {
+    padding: 4px 8px 4px 6px;
+  }
+
+  .category-list .category-item .cate-name {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .products-wrap .product-scroll,
+  .content-wrap .content-scroll,
+  .schedule-wrap .schedule-scroll {
+    padding: 0 8px 12px 8px;
+  }
 }

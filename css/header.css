@@ -1,218 +1,224 @@
-/* ---------- 상단 헤더 - 메뉴 + 로그인/회원가입 ---------- */
+.top-header,
+.middle-header,
+.search-header,
+.segment-header {
+  width: 100%;
+  background-color: #1a1b1f;
+  color: #fff;
+  padding: 0 16px;
+  box-sizing: border-box;
+  z-index: 100; /* 모든 헤더 요소에 z-index 적용 */
+}
+
 .top-header {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 999;
-  min-width: 1000px;
-  width: 100%;
-  max-width: 1440px;
-  min-height: 56px;
-  height: 56px;
-  background-color: #1a1b1f; /* NOTE #304391*/
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px 0 4px;
-}
-/* 메뉴 공통 */
-.top-menu {
-  width: 100%;
-}
-.menu-flex {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.out-menu {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.outbar::before,
-.outbar::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 16px;
-  margin: 0 4px;
-  background-color: #fff6;
-}
-.out-menu li {
-  padding: 0 8px;
-}
-.out-menu a,
-.snap-menu a {
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 500;
-  color: #cdcdce;
-}
-/* 왼쪽 메뉴 */
-.menu-detail-btn {
-  min-width: 28px;
-  width: 28px;
-  height: 28px;
-  background: url(../image/menu.png) no-repeat center / 100%;
-  margin: 0 8px;
-  /* cursor: pointer; */
-}
-.snap-menu {
-  padding: 0 8px;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 500;
-  color: #cdcdce;
-}
-/* 오른쪽 메뉴 */
-.right-menu .out-menu li {
-  padding: 0 6px;
-}
-.right-menu .out-menu a {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-}
-/* 로그인/회원가입 버튼 */
-.h-login-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: fit-content;
-  height: 24px;
-  /* background-color: #1a1b1f; */
-  background-color: transparent;
-  border: 1px solid #cdcdce; /* NOTE #acbce1 */
-  border-radius: 4px;
-  padding: 3px 6px;
-  margin: 0 4px;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 500;
-  text-align: center;
-  color: #cdcdce;
 }
 
-.h-login-btn a {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 500;
-  text-align: center;
-  color: #cdcdce;
-}
-
-/* ---------- 중간 헤더 - 로고, 알람버튼 ---------- */
 .middle-header {
-  min-width: 1000px;
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  background-color: #1a1b1f;
-  padding: 12px 16px;
-  z-index: 100;
-}
-.middle-header .logo {
-  height: 27px;
-  cursor: pointer;
-}
-.middle-header .logo img {
-  height: 27px;
-  object-fit: cover;
-}
-.alarm {
-  width: 28px;
-  height: 28px;
-  background: url(../image/alarm.png) no-repeat center/100%;
-}
-
-/* ---------- 검색바 영역 ---------- */
-.search-header {
-  min-width: 1000px;
-  width: 100%;
-  background-color: #1a1b1f;
-  padding: 0px 16px;
-}
-
-.search-header .searchbar {
-  position: relative;
-  display: flex;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 36px;
-  background-color: #fff;
-  border-radius: 4px;
-  overflow: hidden;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #8a8a8a;
-  padding: 0 8px;
-  cursor: pointer;
+  padding: 12px 16px;
 }
 
-.search-header .searchbar::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background: url(../image/search-icon.png) no-repeat center/100%;
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
+.search-header {
+  padding-bottom: 12px;
 }
 
-/* ---------- 하단 헤더 - 세그먼트 ---------- */
 .segment-header {
   position: sticky;
-  top: 55px;
-  left: 0;
-  z-index: 998;
-  min-width: 1000px;
-  height: 48px;
-  background-color: #1a1b1f;
-  padding: 6px 12px;
+  top: 56px;
+  z-index: 99;
+  background-color: #fafafa;
+  border-bottom: 1px solid #eee;
 }
-.segment-header .segment-wrap {
+
+.menu-flex {
   display: flex;
   align-items: center;
-  gap: 6px;
-  height: 100%;
-}
-.segment-header .segment-wrap .segment-item {
-  position: relative;
-}
-/* 선택된 값 하단 표시 */
-
-.segment-header .segment-wrap .segment-item.active a {
-  color: #fff;
-}
-.segment-header .segment-wrap .segment-item.active::before {
-  content: "";
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 0px;
-  background-color: #fff;
+  gap: 16px;
 }
 
-/* 새로운 내용 업데이트 시 표시되는 뱃지 */
-.segment-header .segment-wrap .segment-item.newbadge::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  display: block;
-  width: 4px;
-  height: 4px;
-  border-radius: 4px;
-  background-color: #245eff; /* NOTE #ff2438 */
-}
-.segment-header .segment-wrap .segment-item a {
+.out-menu {
+  display: flex;
+  gap: 16px;
   font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #909092;
-  padding: 8px 4px;
+  font-weight: 500;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.out-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.snap-menu {
+  font-size: 14px;
+  font-weight: bold;
+  color: #cdcdce;
+}
+
+.h-login-btn {
+  font-size: 13px;
+  color: #fff;
+  background: none;
+  border: 1px solid #cdcdce;
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.h-login-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo a {
+  display: block;
+}
+.logo img {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.searchbar {
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 14px;
+  color: #888;
+  cursor: pointer;
+}
+
+.segment-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 48px;
+  list-style: none;
+  padding: 0;
+}
+
+.segment-item a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+  font-size: 15px;
+  color: #666;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.segment-item.active a {
+  color: #000;
+  font-weight: 700;
+  border-bottom: 2px solid #000;
+}
+
+.menu-detail-btn {
+  display: none;
+  width: 24px;
+  height: 24px;
+  background: url(../image/menu.png) no-repeat center/contain;
+  cursor: pointer;
+  border: none;
+}
+
+.mobile-dropdown {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 80%;
+  max-width: 120px;
+  height: calc(100% - 56px);
+  background-color: #fff;
+  z-index: 101;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  border-radius: 0 10px 0 0;
+}
+
+.mobile-dropdown.active {
+  display: block;
+  transform: translateX(0);
+}
+
+.mobile-menu-section {
+  margin-bottom: 24px;
+}
+.mobile-menu-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+}
+.mobile-menu-list li a {
+  display: block;
+  padding: 8px 0;
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .out-menu.outbar,
+  .snap-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .right-menu .out-menu {
+    display: none;
+  }
+
+  .menu-detail-btn {
+    display: block;
+  }
+
+  .top-header {
+    justify-content: space-between;
+  }
+
+  .segment-header {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0px 0px;
+  }
+  .segment-header::-webkit-scrollbar {
+    display: none;
+  }
+
+  .segment-wrap {
+    justify-content: flex-start;
+  }
+  .segment-item a {
+    white-space: nowrap;
+  }
 }
