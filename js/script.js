@@ -14,9 +14,9 @@ window.addEventListener("load", async () => {
 
             const currentPath = window.location.pathname;
             let basePath = "";
-            if (currentPath.includes("pages/account/")) {
+            if (currentPath.includes("/pages/account/")) {
               basePath = "../../";
-            } else if (currentPath.includes("pages/")) {
+            } else if (currentPath.includes("/pages/")) {
               basePath = "../";
             }
 
